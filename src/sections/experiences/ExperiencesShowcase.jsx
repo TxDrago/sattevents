@@ -111,9 +111,9 @@ const ExperiencesShowcase = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold)]">
+                {/* <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold)]">
                   {experience.number}
-                </span>
+                </span> */}
 
                 <h3 className="mt-6 font-heading text-4xl leading-tight sm:text-5xl">
                   {experience.title}

@@ -82,9 +82,9 @@ const SupportingCapabilities = () => {
                   {/* Number */}
 
                   <div className="absolute left-5 top-5">
-                    <span className="text-[9px] tracking-[0.2em] text-white/80">
+                    {/* <span className="text-[9px] tracking-[0.2em] text-white/80">
                       {capability.number}
-                    </span>
+                    </span> */}
                   </div>
 
                   {/* Arrow */}

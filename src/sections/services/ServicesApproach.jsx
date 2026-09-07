@@ -69,9 +69,9 @@ const ServicesApproach = () => {
                 >
                   {/* NUMBER */}
 
-                  <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold)]">
+                  {/* <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold)]">
                     {step.number}
-                  </span>
+                  </span> */}
 
                   {/* CONTENT */}
 

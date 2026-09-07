@@ -195,9 +195,9 @@ export default function ContactPage() {
 
               <div className="border-t border-[var(--satt-gold)] pt-6">
 
-                <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
+                {/* <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
                   01
-                </span>
+                </span> */}
 
                 <h3 className="mt-5 font-heading text-2xl md:text-3xl">
                   Tell us your vision.
@@ -215,9 +215,9 @@ export default function ContactPage() {
 
               <div className="border-t border-[var(--satt-gold)] pt-6">
 
-                <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
+                {/* <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
                   02
-                </span>
+                </span> */}
 
                 <h3 className="mt-5 font-heading text-2xl md:text-3xl">
                   We shape the experience.
@@ -235,9 +235,9 @@ export default function ContactPage() {
 
               <div className="border-t border-[var(--satt-gold)] pt-6">
 
-                <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
+                {/* <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
                   03
-                </span>
+                </span> */}
 
                 <h3 className="mt-5 font-heading text-2xl md:text-3xl">
                   We bring it to life.

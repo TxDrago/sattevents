@@ -63,9 +63,9 @@ const ServicesGrid = () => {
 
                 <div className="flex flex-col justify-between p-7 md:p-10 lg:p-12">
                   <div>
-                    <span className="text-[14px] tracking-[0.2em] text-[var(--satt-gold)]">
+                    {/* <span className="text-[14px] tracking-[0.2em] text-[var(--satt-gold)]">
                       {service.number}
-                    </span>
+                    </span> */}
 
                     <h3 className="mt-5 font-heading text-3xl transition-colors duration-300 group-hover:text-[var(--satt-gold-dark)] md:text-4xl lg:text-5xl">
                       {service.title}

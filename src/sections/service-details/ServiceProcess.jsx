@@ -46,9 +46,9 @@ const ServiceProcess = ({ service }) => {
               }}
               className="group border-b border-[var(--satt-border)]/30 p-8 md:p-10 lg:min-h-[260px] lg:p-12"
             >
-              <span className="text-[12px] tracking-[0.2em] text-[var(--satt-gold)]">
+              {/* <span className="text-[12px] tracking-[0.2em] text-[var(--satt-gold)]">
                 {step.number}
-              </span>
+              </span> */}
 
               <h3 className="mt-8 font-heading text-3xl transition-colors duration-300 group-hover:text-[var(--satt-gold-dark)]">
                 {step.title}

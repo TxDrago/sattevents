@@ -63,9 +63,9 @@ const MissionVision = () => {
 
               {/* Number */}
 
-              <span className="absolute left-6 top-6 text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-bright)]">
+              {/* <span className="absolute left-6 top-6 text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-bright)]">
                 01
-              </span>
+              </span> */}
             </div>
 
             {/* Content */}
@@ -119,9 +119,9 @@ const MissionVision = () => {
 
               {/* Number */}
 
-              <span className="absolute left-6 top-6 text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-bright)]">
+              {/* <span className="absolute left-6 top-6 text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-bright)]">
                 02
-              </span>
+              </span> */}
             </div>
 
             {/* Content */}

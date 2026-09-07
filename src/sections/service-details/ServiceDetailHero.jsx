@@ -37,9 +37,9 @@ const ServiceDetailHero = ({ service }) => {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-4"
           >
-            <span className="text-[16px] tracking-[0.3em] text-[var(--satt-gold)]">
+            {/* <span className="text-[16px] tracking-[0.3em] text-[var(--satt-gold)]">
               {service.number}
-            </span>
+            </span> */}
 
             <span className="h-px w-12 bg-[var(--satt-gold)]" />
 

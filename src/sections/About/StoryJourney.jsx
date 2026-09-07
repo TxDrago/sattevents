@@ -217,9 +217,9 @@ const StoryJourney = () => {
 
                     <div className="flex items-center gap-4 md:block">
 
-                      <span className="text-[14px] font-medium tracking-[0.2em] text-[var(--satt-gold-dark)]">
+                      {/* <span className="text-[14px] font-medium tracking-[0.2em] text-[var(--satt-gold-dark)]">
                         {item.number}
-                      </span>
+                      </span> */}
 
                       <span className="h-px w-8 bg-[var(--satt-gold)]/50 md:hidden" />
 

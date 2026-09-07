@@ -72,9 +72,9 @@ const WhatWeBelieve = () => {
               className="border-b border-[var(--satt-border)]/30 p-7 md:min-h-[300px] md:border-r md:p-8 lg:border-b-0"
             >
 
-              <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold-dark)]">
+              {/* <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold-dark)]">
                 {belief.number}
-              </span>
+              </span> */}
 
               <h3 className="font-heading mt-12 text-2xl leading-tight text-[var(--satt-text-primary)] md:text-3xl">
                 {belief.title}

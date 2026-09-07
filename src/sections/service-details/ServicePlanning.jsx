@@ -63,9 +63,9 @@ const ServicePlanning = ({ service }) => {
               className="group border-b border-[var(--satt-border)]/30 p-7 lg:p-9"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[12px] tracking-[0.2em] text-[var(--satt-gold)]">
+                {/* <span className="text-[12px] tracking-[0.2em] text-[var(--satt-gold)]">
                   {item.number}
-                </span>
+                </span> */}
 
                 <ArrowUpRight
                   size={15}

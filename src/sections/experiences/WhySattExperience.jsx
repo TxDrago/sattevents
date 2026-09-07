@@ -104,9 +104,9 @@ const WhySattExperience = () => {
                   className="flex gap-5 border-t border-[var(--satt-border)]/30 pt-6"
                 >
 
-                  <span className="shrink-0 text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+                  {/* <span className="shrink-0 text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                     {item.number}
-                  </span>
+                  </span> */}
 
                   <div>
 

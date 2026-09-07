@@ -77,9 +77,9 @@ export default function EventsPage() {
 
                     {/* Number */}
 
-                    <span className="absolute left-5 top-5 text-[10px] tracking-[0.2em] text-white">
+                    {/* <span className="absolute left-5 top-5 text-[10px] tracking-[0.2em] text-white">
                       {event.number}
-                    </span>
+                    </span> */}
 
                     {/* Category */}
 

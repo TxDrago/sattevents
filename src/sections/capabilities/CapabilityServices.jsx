@@ -48,9 +48,9 @@ const CapabilityServices = ({ capability }) => {
                 className="group border-t border-[var(--satt-border)]/30 py-7"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+                  {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                     {item.number}
-                  </span>
+                  </span> */}
 
                   <ArrowUpRight
                     size={15}

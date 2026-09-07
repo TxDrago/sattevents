@@ -74,9 +74,9 @@ const ExperienceJourney = () => {
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center bg-[var(--satt-gold)] text-[10px] font-bold">
+                {/* <div className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center bg-[var(--satt-gold)] text-[10px] font-bold">
                   {item.number}
-                </div>
+                </div> */}
               </div>
 
               {/* Content */}

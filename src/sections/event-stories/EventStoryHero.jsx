@@ -38,9 +38,9 @@ const EventStoryHero = ({ event }) => {
                 transition={{ duration: 0.7 }}
               >
                 <div className="flex items-center gap-4">
-                  <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold)]">
+                  {/* <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold)]">
                     {event.number}
-                  </span>
+                  </span> */}
 
                   <span className="h-px w-10 bg-[var(--satt-gold)]" />
 

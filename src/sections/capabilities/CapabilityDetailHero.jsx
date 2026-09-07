@@ -34,9 +34,9 @@ const CapabilityDetailHero = ({ capability }) => {
 
             <span className="h-px w-12 bg-[var(--satt-gold)]" />
 
-            <span className="text-[10px] tracking-[0.2em] text-white/70">
+            {/* <span className="text-[10px] tracking-[0.2em] text-white/70">
               {capability.number}
-            </span>
+            </span> */}
           </motion.div>
 
           {/* Title */}

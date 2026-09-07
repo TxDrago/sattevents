@@ -31,9 +31,9 @@ const CapabilityProcess = ({ capability }) => {
               }}
               className="border-b border-[var(--satt-border)]/30 p-8 last:border-b-0 md:border-b-0 md:border-r md:p-12 md:last:border-r-0"
             >
-              <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold)]">
+              {/* <span className="text-[10px] tracking-[0.2em] text-[var(--satt-gold)]">
                 {step.number}
-              </span>
+              </span> */}
 
               <h3 className="mt-8 font-heading text-3xl">
                 {step.title}

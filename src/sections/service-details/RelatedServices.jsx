@@ -79,9 +79,9 @@ const RelatedServices = ({ service }) => {
 
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
 
-                    <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+                    {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                       {item.number}
-                    </span>
+                    </span> */}
 
                     <h3 className="mt-3 font-heading text-2xl">
                       {item.title}

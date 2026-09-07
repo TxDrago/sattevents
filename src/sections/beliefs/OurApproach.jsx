@@ -98,9 +98,9 @@ const OurApproach = () => {
               className="border-b border-[var(--satt-border)]/30 p-7 md:border-r md:p-8 lg:border-b-0"
             >
 
-              <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold-dark)]">
+              {/* <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold-dark)]">
                 {item.number}
-              </span>
+              </span> */}
 
               <h3 className="font-heading mt-8 text-3xl text-[var(--satt-text-primary)]">
                 {item.title}

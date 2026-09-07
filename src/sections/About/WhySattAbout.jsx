@@ -167,9 +167,9 @@ const WhySattAbout = () => {
 
                 <div className="flex items-start justify-between">
 
-                  <span className="text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-dark)]">
+                  {/* <span className="text-[10px] font-medium tracking-[0.25em] text-[var(--satt-gold-dark)]">
                     {reason.number}
-                  </span>
+                  </span> */}
 
                   <Icon
                     size={20}

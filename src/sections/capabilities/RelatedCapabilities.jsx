@@ -43,9 +43,9 @@ const RelatedCapabilities = ({ capability }) => {
 
               <div className="flex items-center justify-between border-b border-[var(--satt-border)]/30 py-5">
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+                  {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                     {item.number}
-                  </span>
+                  </span> */}
 
                   <h3 className="mt-2 font-heading text-2xl">
                     {item.title}

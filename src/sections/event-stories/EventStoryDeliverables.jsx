@@ -70,9 +70,9 @@ const EventStoryDeliverables = ({ event }) => {
               }}
               className="border-b border-[var(--satt-border)]/30 p-7 lg:p-10"
             >
-              <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+              {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                 {item.number}
-              </span>
+              </span> */}
 
               <h3 className="mt-6 font-heading text-2xl">
                 {item.title}

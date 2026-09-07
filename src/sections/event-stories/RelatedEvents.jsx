@@ -70,9 +70,9 @@ const RelatedEvents = ({ event }) => {
                   <div className="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/30" />
 
                   <div className="absolute left-5 top-5">
-                    <span className="text-[9px] tracking-[0.2em] text-white">
+                    {/* <span className="text-[9px] tracking-[0.2em] text-white">
                       {item.number}
-                    </span>
+                    </span> */}
                   </div>
 
                 </div>

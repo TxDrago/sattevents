@@ -107,9 +107,9 @@ const ExperienceElements = () => {
                   className="border-t border-[var(--satt-border)]/40 pt-5"
                 >
 
-                  <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
+                  {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold)]">
                     {item.number}
-                  </span>
+                  </span> */}
 
                   <h3 className="mt-4 font-heading text-2xl">
                     {item.title}
