@@ -134,12 +134,13 @@ const CTA = () => {
 
               {/* Secondary CTA */}
 
-              <a
-                href="#recent-works"
-                className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[var(--satt-gold)] hover:bg-white/10"
-              >
-                Explore Our Work
-              </a>
+             <a
+  href="#recent-works"
+  style={{ color: "var(--satt-text-third)" }}
+  className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 text-[10px] uppercase tracking-[0.2em] transition-all duration-300 hover:border-[var(--satt-gold)] hover:bg-white/10"
+>
+  Explore Our Work
+</a>
             </motion.div>
           </div>
 

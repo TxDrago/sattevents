@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import works from "@/data/works";
 
@@ -20,9 +16,7 @@ const RecentWorks = () => {
   };
 
   const previousWork = () => {
-    setActiveIndex(
-      (current) => (current - 1 + works.length) % works.length
-    );
+    setActiveIndex((current) => (current - 1 + works.length) % works.length);
   };
 
   return (
@@ -31,13 +25,11 @@ const RecentWorks = () => {
       className="relative overflow-hidden bg-[var(--satt-bg-primary)] py-24 md:py-32 lg:py-40"
     >
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-16">
-
         {/* =====================================
             HEADER
         ===================================== */}
 
         <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end lg:mb-20">
-
           <div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -84,7 +76,6 @@ const RecentWorks = () => {
             className="group inline-flex w-fit items-center gap-3 border-b border-[var(--satt-gold)] pb-2 text-[10px] uppercase tracking-[0.2em] text-[var(--satt-text-primary)]"
           >
             View All Works
-
             <ArrowUpRight
               size={15}
               className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -97,10 +88,8 @@ const RecentWorks = () => {
         ===================================== */}
 
         <div className="grid overflow-hidden border border-[var(--satt-border)]/40 lg:grid-cols-[1.35fr_0.65fr]">
-
           {/* Image */}
           <div className="relative h-[55vh] min-h-[420px] overflow-hidden bg-[#ddd] lg:h-[650px]">
-
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeWork.id}
@@ -139,7 +128,6 @@ const RecentWorks = () => {
 
           {/* Information */}
           <div className="flex flex-col justify-between bg-[var(--satt-bg-secondary)] p-7 md:p-10 lg:p-12 xl:p-14">
-
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeWork.id}
@@ -174,7 +162,6 @@ const RecentWorks = () => {
 
             {/* Controls */}
             <div className="mt-14">
-
               {/* Progress */}
               <div className="mb-7 flex items-center gap-4">
                 <span className="text-[10px] text-[var(--satt-text-secondary)]">
@@ -197,31 +184,103 @@ const RecentWorks = () => {
               </div>
 
               {/* Buttons */}
-              <div className="flex items-center gap-3">
-  <button
-    type="button"
-    onClick={previousWork}
-    aria-label="Previous work"
-    className="flex h-12 w-12 items-center justify-center border border-[var(--satt-border)] text-[var(--satt-text-primary)] transition-all duration-300 hover:bg-[var(--satt-gold)] hover:text-[var(--satt-text-primary)]"
-  >
-    <ArrowLeft size={17} strokeWidth={1.5} />
-  </button>
+              {/* Navigation Buttons */}
+              <div className="flex items-center gap-4">
+                {/* Previous */}
+                <button
+                  type="button"
+                  onClick={previousWork}
+                  aria-label="Previous work"
+                  className="
+                              group
+                              flex
+                              h-10
+                              w-10
+                              items-center
+                              justify-center
+                              rounded-full
+                              border
+                              border-[var(--satt-gold)]
+                              bg-transparent
+                              text-[var(--satt-gold)]
+                              transition-all
+                              duration-500
+                              hover:scale-110
+                              hover:bg-[var(--satt-gold)]
+                              hover:text-white
+                            "
+                >
+                  <svg
+                    viewBox="0 0 48 48"
+                    className="h-7 w-7 transition-transform duration-500 group-hover:-translate-x-0.5"
+                    fill="none"
+                  >
+                    <path
+                      d="M36 24H12"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                    />
 
-  <button
-    type="button"
-    onClick={nextWork}
-    aria-label="Next work"
-    className="flex h-12 w-12 items-center justify-center border border-[var(--satt-border)] text-[var(--satt-text-primary)] transition-all duration-300 hover:bg-[var(--satt-gold)] hover:text-[var(--satt-text-primary)]"
-  >
-    <ArrowRight size={17} strokeWidth={1.5} />
-  </button>
-</div>
+                    <path
+                      d="M20 14L10 24L20 34"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
 
+                {/* Next */}
+                <button
+                  type="button"
+                  onClick={nextWork}
+                  aria-label="Next work"
+                  className="
+                              group
+                              flex
+                              h-10
+                              w-10
+                              items-center
+                              justify-center
+                              rounded-full
+                              border
+                              border-[var(--satt-gold)]
+                              bg-transparent
+                              text-[var(--satt-gold)]
+                              transition-all
+                              duration-500
+                              hover:scale-110
+                              hover:bg-[var(--satt-gold)]
+                              hover:text-white
+                            "
+                >
+                  <svg
+                    viewBox="0 0 48 48"
+                    className="h-7 w-7 transition-transform duration-500 group-hover:translate-x-0.5"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 24H36"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M28 14L38 24L28 34"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

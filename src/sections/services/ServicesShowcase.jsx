@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const experiences = [
   {
@@ -36,9 +35,17 @@ const experiences = [
 const ServicesShowcase = () => {
   const [active, setActive] = useState(0);
 
+  /* =========================================================
+     NEXT EXPERIENCE
+  ========================================================= */
+
   const next = () => {
     setActive((current) => (current + 1) % experiences.length);
   };
+
+  /* =========================================================
+     PREVIOUS EXPERIENCE
+  ========================================================= */
 
   const previous = () => {
     setActive(
@@ -52,9 +59,14 @@ const ServicesShowcase = () => {
   return (
     <section className="bg-[var(--satt-bg-secondary)] py-24 md:py-32">
       <div className="mx-auto max-w-[1600px] px-6 xl:px-10">
-        {/* HEADER */}
+
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
 
         <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+
+          {/* Heading */}
           <div>
             <span className="text-[16px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
               Featured Experiences
@@ -68,99 +80,282 @@ const ServicesShowcase = () => {
             </h2>
           </div>
 
-          {/* CONTROLS */}
+          {/* ===================================================
+              CONTROLS
+          =================================================== */}
 
-          <div className="flex gap-2">
+          <div className="flex shrink-0 items-center gap-3">
+
+            {/* -------------------------------------------------
+                PREVIOUS
+            ------------------------------------------------- */}
+
             <button
               type="button"
               onClick={previous}
               aria-label="Previous experience"
-              className="flex h-12 w-12 items-center justify-center border border-[var(--satt-border)] transition-all hover:border-[var(--satt-gold)] hover:bg-[var(--satt-gold)]"
+              className="
+                group
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[var(--satt-gold)]
+                bg-white
+                text-[var(--satt-gold)]
+                shadow-[0_4px_18px_rgba(198,161,91,0.12)]
+                transition-all
+                duration-500
+                hover:scale-110
+                hover:bg-[var(--satt-gold)]
+                hover:text-white
+                hover:shadow-[0_8px_25px_rgba(198,161,91,0.25)]
+                active:scale-95
+              "
             >
-              <ArrowLeft size={17} strokeWidth={1.3} />
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                className="
+                  h-7
+                  w-7
+                  transition-transform
+                  duration-500
+                  group-hover:-translate-x-1
+                "
+              >
+                <path
+                  d="M36 24H12"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d="M20 14L10 24L20 34"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
+
+            {/* -------------------------------------------------
+                NEXT
+            ------------------------------------------------- */}
 
             <button
               type="button"
               onClick={next}
               aria-label="Next experience"
-              className="flex h-12 w-12 items-center justify-center border border-[var(--satt-border)] transition-all hover:border-[var(--satt-gold)] hover:bg-[var(--satt-gold)]"
+              className="
+                group
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[var(--satt-gold)]
+                bg-white
+                text-[var(--satt-gold)]
+                shadow-[0_4px_18px_rgba(198,161,91,0.12)]
+                transition-all
+                duration-500
+                hover:scale-110
+                hover:bg-[var(--satt-gold)]
+                hover:text-white
+                hover:shadow-[0_8px_25px_rgba(198,161,91,0.25)]
+                active:scale-95
+              "
             >
-              <ArrowRight size={17} strokeWidth={1.3} />
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                className="
+                  h-7
+                  w-7
+                  transition-transform
+                  duration-500
+                  group-hover:translate-x-1
+                "
+              >
+                <path
+                  d="M12 24H36"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d="M28 14L38 24L28 34"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
+
           </div>
         </div>
 
-        {/* CAROUSEL */}
+        {/* =====================================================
+            MAIN CAROUSEL
+        ===================================================== */}
 
         <div className="relative overflow-hidden">
+
           <AnimatePresence mode="wait">
+
             <motion.div
               key={active}
-              initial={{ opacity: 0, scale: 1.02 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.5 }}
-              className="relative h-[55vh] min-h-[450px] overflow-hidden"
+              initial={{
+                opacity: 0,
+                scale: 1.02,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.98,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+              className="
+                relative
+                h-[55vh]
+                min-h-[450px]
+                overflow-hidden
+              "
             >
+
+              {/* =================================================
+                  IMAGE
+              ================================================= */}
+
               <Image
                 src={experience.image}
                 alt={experience.title}
                 fill
-                className="object-cover"
+                priority={active === 0}
+                className="
+                  object-cover
+                  transition-transform
+                  duration-700
+                "
                 sizes="100vw"
               />
 
-              {/* OVERLAY */}
+              {/* =================================================
+                  IMAGE OVERLAY
+              ================================================= */}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/70
+                  via-black/10
+                  to-transparent
+                "
+              />
 
-              {/* CONTENT */}
+              {/* =================================================
+                  CONTENT
+              ================================================= */}
 
-              <div className="absolute bottom-0 left-0 p-7 text-white md:p-12">
+              <div className="absolute bottom-0 left-0 p-7 text-white md:p-12 lg:p-16">
+
                 <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold)]">
                   {experience.category}
                 </p>
 
-                <h3 className="mt-3 font-heading text-4xl sm:text-5xl lg:text-6xl">
+                <h3 className="mt-3 font-heading text-4xl leading-tight sm:text-5xl lg:text-6xl">
                   {experience.title}
                 </h3>
+
               </div>
 
-              {/* NUMBER */}
+              {/* =================================================
+                  SLIDE NUMBER
+              ================================================= */}
 
-              <div className="absolute right-6 top-6 text-xs tracking-[0.2em] text-white/80">
+              <div className="absolute right-6 top-6 text-xs tracking-[0.2em] text-white/80 md:right-8 md:top-8">
                 {String(active + 1).padStart(2, "0")} /{" "}
                 {String(experiences.length).padStart(2, "0")}
               </div>
+
             </motion.div>
+
           </AnimatePresence>
+
         </div>
 
-        {/* THUMBNAILS */}
+        {/* =====================================================
+            THUMBNAILS
+        ===================================================== */}
 
         <div className="mt-5 grid grid-cols-5 gap-2">
+
           {experiences.map((item, index) => (
+
             <button
               key={item.title}
               type="button"
               onClick={() => setActive(index)}
-              className={`relative h-20 overflow-hidden ${
-                active === index
-                  ? "ring-1 ring-[var(--satt-gold)]"
-                  : "opacity-50 transition-opacity hover:opacity-100"
-              }`}
+              aria-label={`View ${item.title}`}
+              aria-current={active === index ? "true" : undefined}
+              className={`
+                group
+                relative
+                h-20
+                overflow-hidden
+                transition-all
+                duration-500
+                sm:h-24
+                ${
+                  active === index
+                    ? "ring-1 ring-[var(--satt-gold)]"
+                    : "opacity-50 hover:opacity-100"
+                }
+              `}
             >
+
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover"
+                className="
+                  object-cover
+                  transition-transform
+                  duration-700
+                  group-hover:scale-105
+                "
                 sizes="20vw"
               />
+
+              {/* Active Overlay */}
+              {active === index && (
+                <div className="absolute inset-0 bg-[var(--satt-gold)]/10" />
+              )}
+
             </button>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );
