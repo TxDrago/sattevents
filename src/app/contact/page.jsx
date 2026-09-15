@@ -24,7 +24,7 @@ export default function ContactPage() {
 
             <div className="max-w-5xl">
 
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+              <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
                 Get In Touch
               </span>
 

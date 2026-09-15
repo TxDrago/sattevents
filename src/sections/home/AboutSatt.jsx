@@ -35,7 +35,7 @@ const AboutSatt = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="font-signature text-4xl text-[var(--satt-gold-dark)] md:text-5xl">
-              crafted with intention
+              Crafted with intention
             </p>
 
             <h2 className="font-heading mt-4 max-w-4xl text-4xl leading-[1.15] text-[var(--satt-text-primary)] md:text-5xl lg:text-6xl xl:text-7xl">

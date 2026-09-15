@@ -6,17 +6,26 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const EventStoryHero = ({ event }) => {
+  if (!event) {
+    return null;
+  }
+
+  const heroImage = event.heroImage || null;
+
   return (
     <section className="relative min-h-[85vh] overflow-hidden bg-black text-white">
       {/* Background Image */}
 
-      <Image
-        src={event.coverImage}
-        alt={event.title}
-        fill
-        priority
-        className="object-cover"
-      />
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt={event.title || "SATT Event Story"}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      )}
 
       {/* Overlay */}
 
@@ -26,25 +35,19 @@ const EventStoryHero = ({ event }) => {
 
       {/* Content */}
 
-      <div className="relative z-10 flex min-h-[85vh] items-end">
+      <div className="relative z-10 flex min-h-[85vh] items-center">
         <div className="mx-auto w-full max-w-[1600px] px-6 pb-16 xl:px-10 xl:pb-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-
             <div className="max-w-5xl">
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
                 <div className="flex items-center gap-4">
-                  {/* <span className="text-[10px] tracking-[0.25em] text-[var(--satt-gold)]">
-                    {event.number}
-                  </span> */}
-
                   <span className="h-px w-10 bg-[var(--satt-gold)]" />
 
-                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/80">
+                  <span className="text-[16px] font-bold uppercase tracking-[0.25em] text-white/80">
                     {event.category}
                   </span>
                 </div>
@@ -54,7 +57,7 @@ const EventStoryHero = ({ event }) => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="mt-7 max-w-5xl font-heading text-5xl leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl"
+                className="mt-7 max-w-5xl font-heading text-3xl leading-[1.02] sm:text-4xl md:text-5xl lg:text-6xl"
               >
                 {event.title}
               </motion.h1>
@@ -67,7 +70,6 @@ const EventStoryHero = ({ event }) => {
               >
                 {event.description}
               </motion.p>
-
             </div>
 
             {/* Explore */}
@@ -90,7 +92,6 @@ const EventStoryHero = ({ event }) => {
                 />
               </a>
             </motion.div>
-
           </div>
         </div>
       </div>

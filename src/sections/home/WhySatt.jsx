@@ -156,7 +156,7 @@ const WhySatt = () => {
           className="mt-20 flex flex-col gap-6 border-t border-[var(--satt-border)]/40 pt-8 md:mt-24 md:flex-row md:items-center md:justify-between"
         >
           <p className="font-signature text-3xl text-[var(--satt-gold-dark)] md:text-5xl">
-            thoughtfully planned. beautifully experienced.
+            Thoughtfully planned. beautifully experienced.
           </p>
 
           <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--satt-text-secondary)]">

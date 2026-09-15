@@ -82,7 +82,7 @@ const GalleryGrid = () => {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
 
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+            <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
               Explore
             </span>
 

@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 
-import { eventStories } from "@/data/eventStories";
+import {
+  getEventStory,
+  getEventStorySlugs,
+} from "@/data/eventStories";
 
 import EventStoryHero from "@/sections/event-stories/EventStoryHero";
 import EventStoryOverview from "@/sections/event-stories/EventStoryOverview";
@@ -15,17 +18,22 @@ import EventStoryVideo from "@/sections/event-stories/EventStoryVideo";
 import RelatedEvents from "@/sections/event-stories/RelatedEvents";
 import EventStoryCTA from "@/sections/event-stories/EventStoryCTA";
 
+export async function generateStaticParams() {
+  return getEventStorySlugs().map((slug) => ({
+    slug,
+  }));
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const event = eventStories.find(
-    (item) => item.slug === slug
-  );
+  const event = getEventStory(slug);
 
   if (!event) {
     return {
       title: "Event Story | SATT Event Planners",
+      description:
+        "Explore event stories and experiences created by SATT Event Planners.",
     };
   }
 
@@ -35,13 +43,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-
 export default async function EventStoryPage({ params }) {
   const { slug } = await params;
 
-  const event = eventStories.find(
-    (item) => item.slug === slug
-  );
+  const event = getEventStory(slug);
 
   if (!event) {
     notFound();
@@ -52,7 +57,6 @@ export default async function EventStoryPage({ params }) {
       <Navbar />
 
       <main className="bg-[var(--satt-bg-primary)] text-[var(--satt-text-primary)]">
-
         <EventStoryHero event={event} />
 
         <EventStoryOverview event={event} />
@@ -70,7 +74,6 @@ export default async function EventStoryPage({ params }) {
         <RelatedEvents event={event} />
 
         <EventStoryCTA event={event} />
-
       </main>
 
       <Footer />

@@ -41,7 +41,7 @@ const ExperienceGallery = () => {
 
           <div className="max-w-2xl">
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+            <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
               Experience Gallery
             </span>
 

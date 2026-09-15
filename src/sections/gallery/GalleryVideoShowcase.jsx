@@ -39,7 +39,7 @@ const GalleryVideoShowcase = () => {
       <div className="mx-auto max-w-[1600px] px-6 xl:px-10">
 
         <div className="max-w-3xl">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+          <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
             Watch The Experience
           </span>
 

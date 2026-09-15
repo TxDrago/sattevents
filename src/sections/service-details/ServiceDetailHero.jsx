@@ -43,7 +43,7 @@ const ServiceDetailHero = ({ service }) => {
 
             <span className="h-px w-12 bg-[var(--satt-gold)]" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-white/70">
               {service.type}
             </span>
           </motion.div>

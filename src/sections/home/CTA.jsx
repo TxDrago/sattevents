@@ -67,7 +67,7 @@ const CTA = () => {
               }}
               className="font-signature mt-8 text-5xl text-[var(--satt-gold-bright)] md:text-6xl lg:text-7xl"
             >
-              your moment,
+              Your moment,
             </motion.p>
 
             {/* Main Heading */}
@@ -82,10 +82,10 @@ const CTA = () => {
               }}
               className="font-heading mt-2 max-w-4xl text-4xl leading-[1.1] text-white md:text-5xl lg:text-6xl xl:text-7xl"
             >
-              beautifully planned.
+              Beautifully planned.
               <br />
               <span className="text-[var(--satt-bright-gold)]">
-                beautifully remembered.
+                Beautifully remembered.
               </span>
             </motion.h2>
 

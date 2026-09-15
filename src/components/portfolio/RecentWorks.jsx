@@ -52,7 +52,7 @@ const RecentWorks = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-signature mt-6 text-4xl text-[var(--satt-gold-dark)] md:text-5xl"
             >
-              moments we've created
+              Moments we've created
             </motion.p>
 
             <motion.h2
@@ -185,7 +185,7 @@ const RecentWorks = () => {
 
               {/* Buttons */}
               {/* Navigation Buttons */}
-              <div className="flex items-center gap-4">
+              <div className="flex justify-center items-center gap-4">
                 {/* Previous */}
                 <button
                   type="button"

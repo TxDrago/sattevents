@@ -66,7 +66,7 @@ const GalleryImageCarousel = () => {
 
             <div className="absolute bottom-8 left-8 max-w-2xl md:bottom-12 md:left-12">
 
-              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold)]">
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold)]">
                 {slide.category}
               </span>
 

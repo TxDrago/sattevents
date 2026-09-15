@@ -34,7 +34,7 @@ const ExperienceJourney = () => {
         {/* Header */}
 
         <div className="max-w-3xl">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+          <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
             The Experience Journey
           </span>
 

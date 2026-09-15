@@ -13,7 +13,7 @@ const ExperienceIntroduction = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+            <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
               More Than An Event
             </span>
 
@@ -31,7 +31,7 @@ const ExperienceIntroduction = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <p className="text-lg leading-8 text-[var(--satt-text-secondary)]">
+            <p className="text-xl leading-8 text-[var(--satt-text-secondary)]">
               We design the feeling around them.
             </p>
 

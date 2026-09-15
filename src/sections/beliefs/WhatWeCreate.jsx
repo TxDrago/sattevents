@@ -66,9 +66,9 @@ const WhatWeCreate = () => {
                   key={item}
                   className="flex items-center gap-5 border-b border-[var(--satt-border)]/30 py-5"
                 >
-                  <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
+                  {/* <span className="text-[9px] tracking-[0.2em] text-[var(--satt-gold-dark)]">
                     0{index + 1}
-                  </span>
+                  </span> */}
 
                   <p className="font-heading text-xl text-[var(--satt-text-primary)] md:text-2xl">
                     {item}

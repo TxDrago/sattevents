@@ -57,7 +57,7 @@ const ExperiencesShowcase = () => {
         <div className="mb-12 flex items-end justify-between gap-8">
 
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+            <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
               Experiences We Create
             </span>
 

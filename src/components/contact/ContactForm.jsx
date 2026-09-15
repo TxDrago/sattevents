@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -40,6 +41,8 @@ const budgetOptions = [
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -50,20 +53,46 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log("SATT Contact Enquiry:", form);
+    setLoading(true);
+    setErrorMessage("");
 
-    setSubmitted(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Unable to send your enquiry."
+        );
+      }
+
+      setSubmitted(true);
+      setForm(initialForm);
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setErrorMessage(
+        error.message || "Something went wrong. Please try again later."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className="flex min-h-[500px] items-center justify-center text-center">
-
         <div className="max-w-md">
-
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
             Thank You
           </span>
@@ -82,25 +111,22 @@ export default function ContactForm() {
             onClick={() => {
               setForm(initialForm);
               setSubmitted(false);
+              setErrorMessage("");
             }}
             className="mt-8 border border-[var(--satt-gold)] px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-[var(--satt-gold)]"
           >
             Send Another Enquiry
           </button>
-
         </div>
-
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-
       {/* FORM HEADER */}
 
       <div className="mb-10">
-
         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
           Event Enquiry
         </span>
@@ -108,14 +134,11 @@ export default function ContactForm() {
         <h2 className="mt-4 font-heading text-3xl md:text-4xl">
           Tell us a little about your event.
         </h2>
-
       </div>
-
 
       {/* NAME + COMPANY */}
 
       <div className="grid gap-8 md:grid-cols-2">
-
         <Field
           label="Your Name"
           name="name"
@@ -130,14 +153,11 @@ export default function ContactForm() {
           value={form.company}
           onChange={handleChange}
         />
-
       </div>
-
 
       {/* EMAIL + PHONE */}
 
       <div className="grid gap-8 md:grid-cols-2">
-
         <Field
           label="Email Address"
           type="email"
@@ -155,9 +175,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
         />
-
       </div>
-
 
       {/* EVENT TYPE */}
 
@@ -170,11 +188,9 @@ export default function ContactForm() {
         required
       />
 
-
       {/* DATE + GUESTS */}
 
       <div className="grid gap-8 md:grid-cols-2">
-
         <Field
           label="Event Date"
           type="date"
@@ -190,9 +206,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="e.g. 500"
         />
-
       </div>
-
 
       {/* BUDGET */}
 
@@ -204,11 +218,9 @@ export default function ContactForm() {
         options={budgetOptions}
       />
 
-
       {/* MESSAGE */}
 
       <div>
-
         <label
           htmlFor="message"
           className="text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--satt-text-secondary)]"
@@ -225,39 +237,43 @@ export default function ContactForm() {
           placeholder="Tell us about your vision, venue, requirements or anything else you'd like us to know..."
           className="mt-3 w-full resize-none border-b border-black/20 bg-transparent px-0 py-3 text-sm outline-none transition-colors placeholder:text-black/30 focus:border-[var(--satt-gold-dark)]"
         />
-
       </div>
 
+      {/* ERROR MESSAGE */}
+
+      {errorMessage && (
+        <div
+          role="alert"
+          className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+        >
+          {errorMessage}
+        </div>
+      )}
 
       {/* SUBMIT */}
 
       <div className="pt-3">
-
         <button
           type="submit"
-          className="group flex w-full items-center justify-between bg-[var(--satt-gold)] px-6 py-5 text-[10px] font-bold uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-[var(--satt-gold-dark)]"
+          disabled={loading}
+          className="group flex w-full items-center justify-between bg-[var(--satt-gold)] px-6 py-5 text-[10px] font-bold uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-[var(--satt-gold-dark)] disabled:cursor-not-allowed disabled:opacity-60"
         >
-
           <span>
-            Send Enquiry
+            {loading ? "Sending Enquiry..." : "Send Enquiry"}
           </span>
 
           <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
-            ↗
+            {loading ? "..." : "↗"}
           </span>
-
         </button>
-
       </div>
-
     </form>
   );
 }
 
-
 /* =========================================================
    INPUT FIELD
-========================================================= */
+   ========================================================= */
 
 function Field({
   label,
@@ -270,7 +286,6 @@ function Field({
 }) {
   return (
     <div>
-
       <label
         htmlFor={name}
         className="text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--satt-text-secondary)]"
@@ -288,15 +303,13 @@ function Field({
         placeholder={placeholder}
         className="mt-3 w-full border-b border-black/20 bg-transparent px-0 py-3 text-sm outline-none transition-colors placeholder:text-black/30 focus:border-[var(--satt-gold-dark)]"
       />
-
     </div>
   );
 }
 
-
 /* =========================================================
    SELECT FIELD
-========================================================= */
+   ========================================================= */
 
 function SelectField({
   label,
@@ -308,7 +321,6 @@ function SelectField({
 }) {
   return (
     <div>
-
       <label
         htmlFor={name}
         className="text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--satt-text-secondary)]"
@@ -324,9 +336,7 @@ function SelectField({
         required={required}
         className="mt-3 w-full border-b border-black/20 bg-transparent px-0 py-3 text-sm outline-none transition-colors focus:border-[var(--satt-gold-dark)]"
       >
-        <option value="">
-          Select an option
-        </option>
+        <option value="">Select an option</option>
 
         {options.map((option) => (
           <option key={option} value={option}>
@@ -334,7 +344,7 @@ function SelectField({
           </option>
         ))}
       </select>
-
     </div>
   );
 }
+

@@ -31,7 +31,7 @@ const ExperiencesCTA = () => {
           className="max-w-3xl"
         >
 
-          <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[var(--satt-gold)]">
+          <span className="text-[24px] font-bold uppercase tracking-[0.35em] text-[var(--satt-gold)]">
             Your Experience Starts Here
           </span>
 

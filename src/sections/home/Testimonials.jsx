@@ -60,7 +60,7 @@ const Testimonials = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="font-signature text-4xl text-[var(--satt-gold-dark)] md:text-5xl">
-              words from our clients
+              Words from our clients
             </p>
 
             <h2 className="font-heading mt-3 max-w-3xl text-4xl leading-tight text-[var(--satt-text-primary)] md:text-5xl lg:text-6xl">

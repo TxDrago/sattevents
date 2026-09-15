@@ -80,7 +80,7 @@ const ExperienceElements = () => {
           <div>
 
             <div className="mb-12 max-w-2xl">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+              <span className="text-[16px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
                 The Elements
               </span>
 

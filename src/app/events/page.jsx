@@ -27,7 +27,7 @@ export default function EventsPage() {
         <section className="relative overflow-hidden py-28 md:py-40">
           <div className="mx-auto max-w-[1600px] px-6 xl:px-10">
             <div className="max-w-4xl">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
+              <span className="text-[24px] font-bold uppercase tracking-[0.3em] text-[var(--satt-gold-dark)]">
                 Event Stories
               </span>
 

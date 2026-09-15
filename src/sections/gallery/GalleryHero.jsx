@@ -20,7 +20,7 @@ const GalleryHero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[var(--satt-gold)]">
+          <span className="text-[24px] font-bold uppercase tracking-[0.35em] text-[var(--satt-gold)]">
             The Gallery
           </span>
 
