@@ -1,4 +1,28 @@
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "#",
+    icon: "https://img.icons8.com/color/48/instagram-new.png",
+  },
+  {
+    name: "Facebook",
+    href: "#",
+    icon: "https://img.icons8.com/color/48/facebook-new.png",
+  },
+  {
+    name: "YouTube",
+    href: "#",
+    icon: "https://img.icons8.com/color/48/youtube-play.png",
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/9174150777724",
+    icon: "https://img.icons8.com/color/48/whatsapp.png",
+  },
+];
 
 const TopBar = () => {
   return (
@@ -7,8 +31,9 @@ const TopBar = () => {
 
         {/* Contact Information */}
         <div className="flex items-center gap-6">
+
           <a
-            href="mailto:hello@satteventplanners.com"
+            href="mailto:visit.sattevents@gmail.com"
             className="flex items-center gap-2 transition-colors hover:text-[var(--satt-gold-dark)]"
           >
             <Mail size={13} />
@@ -16,42 +41,40 @@ const TopBar = () => {
           </a>
 
           <a
-            href="tel:+910000000000"
+            href="tel:+9174150777724"
             className="flex items-center gap-2 transition-colors hover:text-[var(--satt-gold-dark)]"
           >
             <Phone size={13} />
             <span>+91 74150-77724</span>
           </a>
+
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4">
 
-          <a
-            href="#"
-            aria-label="Instagram"
-            className="text-[10px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--satt-gold)]"
-          >
-            Instagram
-          </a>
-
-          <a
-            href="#"
-            aria-label="Facebook"
-            className="text-[10px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--satt-gold)]"
-          >
-            Facebook
-          </a>
-
-          <a
-            href="#"
-            aria-label="YouTube"
-            className="text-[10px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--satt-gold)]"
-          >
-            YouTube
-          </a>
+          {socialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              title={social.name}
+              className="flex items-center justify-center transition-transform duration-200 hover:scale-110"
+            >
+              <Image
+                src={social.icon}
+                alt={social.name}
+                width={20}
+                height={20}
+                className="h-5 w-5 object-contain"
+              />
+            </a>
+          ))}
 
         </div>
+
       </div>
     </div>
   );
