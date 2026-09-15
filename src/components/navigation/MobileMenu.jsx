@@ -1,45 +1,109 @@
+
 "use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronDown, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { eventServices } from "@/data/services";
 
 const MobileMenu = ({ open, onClose }) => {
+  const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  const navigation = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
-    {
-      label: "Our Believe",
-      href: "/beliefs",
-    },
-    {
-      label: "Experiences",
-      href: "/experiences",
-    },
-    {
-      label: "Event Stories",
-      href: "/events",
-    },
-    {
-      label: "Gallery",
-      href: "/gallery",
-    },
-    {
-      label: "Contact",
-      href: "/contact",
-    },
-  ];
+  const isActive = (path) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
+
+  /* =========================================================
+     ACTIVE STATES
+  ========================================================= */
+
+  const homeActive = isActive("/");
+  const aboutActive = isActive("/about");
+  const servicesActive = isActive("/services");
+  const beliefsActive = isActive("/beliefs");
+  const experiencesActive = isActive("/experiences");
+  const eventsActive = isActive("/events");
+  const partnersActive = isActive("/partners");
+  const galleryActive = isActive("/gallery");
+  const contactActive = isActive("/contact");
+
+  /* =========================================================
+     MOBILE NAV ITEM
+  ========================================================= */
+
+  const MobileNavItem = ({
+    href,
+    label,
+    active,
+    delay = 0,
+  }) => {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay }}
+        className="border-b border-[var(--satt-border)]/20 py-4"
+      >
+        <Link
+          href={href}
+          onClick={onClose}
+          className={`group relative inline-block font-heading text-3xl font-bold transition-all duration-300 ${
+            active
+              ? "text-[var(--satt-gold-dark)]"
+              : "text-[var(--satt-text-primary)] hover:text-[var(--satt-gold-dark)]"
+          }`}
+        >
+          <span className="relative z-10">
+            {label}
+          </span>
+
+          {/* =================================================
+              GOLD UNDERLINE
+          ================================================= */}
+
+          <span
+            className={`absolute -bottom-1 left-0 h-px bg-[var(--satt-gold)] transition-all duration-500 ${
+              active
+                ? "w-full"
+                : "w-0 group-hover:w-full"
+            }`}
+          />
+
+          {/* =================================================
+              DIAMOND
+          ================================================= */}
+
+          <span
+            className={`absolute -bottom-[4px] left-1/2 h-1.5 w-1.5 -translate-x-1/2 rotate-45 bg-[var(--satt-gold)] transition-all duration-300 ${
+              active
+                ? "scale-100 opacity-100"
+                : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"
+            }`}
+          />
+
+          {/* =================================================
+              SUBTLE GLOW
+          ================================================= */}
+
+          <span
+            className={`pointer-events-none absolute -bottom-1 left-1/2 h-3 -translate-x-1/2 bg-[var(--satt-gold)]/20 blur-md transition-all duration-500 ${
+              active
+                ? "w-[85%] opacity-100"
+                : "w-0 opacity-0"
+            }`}
+          />
+        </Link>
+      </motion.div>
+    );
+  };
 
   return (
     <AnimatePresence>
@@ -48,7 +112,12 @@ const MobileMenu = ({ open, onClose }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] overflow-y-auto bg-[var(--satt-bg-primary)] lg:hidden"
+          className="
+            fixed inset-0 z-[100]
+            overflow-y-auto
+            bg-[var(--satt-bg-primary)]
+            min-[1100px]:hidden
+          "
         >
           <div className="flex min-h-screen flex-col px-6 py-6">
 
@@ -58,18 +127,28 @@ const MobileMenu = ({ open, onClose }) => {
 
             <div className="flex items-center justify-between">
 
+              {/* LOGO */}
+
               <Link
                 href="/"
                 onClick={onClose}
-                className="font-heading text-xl tracking-wide"
+                className="group font-heading text-xl tracking-wide transition-colors duration-300 hover:text-[var(--satt-gold-dark)]"
               >
                 SATT
               </Link>
 
+              {/* CLOSE */}
+
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="flex h-10 w-10 items-center justify-center border border-[var(--satt-border)]"
+                className="
+                  flex h-10 w-10 items-center justify-center
+                  border border-[var(--satt-border)]
+                  transition-all duration-300
+                  hover:border-[var(--satt-gold)]
+                  hover:text-[var(--satt-gold-dark)]
+                "
               >
                 <X size={20} strokeWidth={1.5} />
               </button>
@@ -82,39 +161,27 @@ const MobileMenu = ({ open, onClose }) => {
 
             <nav className="mt-16 flex flex-col">
 
-              {/* HOME */}
+              {/* =================================================
+                  HOME
+              ================================================= */}
 
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0 }}
-                className="border-b border-[var(--satt-border)]/20 py-4"
-              >
-                <Link
-                  href="/"
-                  onClick={onClose}
-                  className="font-heading text-3xl font-bold transition-colors hover:text-[var(--satt-gold-dark)]"
-                >
-                  Home
-                </Link>
-              </motion.div>
+              <MobileNavItem
+                href="/"
+                label="Home"
+                active={homeActive}
+                delay={0}
+              />
 
-              {/* ABOUT */}
+              {/* =================================================
+                  ABOUT
+              ================================================= */}
 
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.06 }}
-                className="border-b border-[var(--satt-border)]/20 py-4"
-              >
-                <Link
-                  href="/about"
-                  onClick={onClose}
-                  className="font-heading text-3xl font-bold transition-colors hover:text-[var(--satt-gold-dark)]"
-                >
-                  About
-                </Link>
-              </motion.div>
+              <MobileNavItem
+                href="/about"
+                label="About"
+                active={aboutActive}
+                delay={0.06}
+              />
 
               {/* =================================================
                   SERVICES
@@ -133,70 +200,174 @@ const MobileMenu = ({ open, onClose }) => {
                   <Link
                     href="/services"
                     onClick={onClose}
-                    className="font-heading text-3xl font-bold transition-colors hover:text-[var(--satt-gold-dark)]"
+                    className={`group relative inline-block font-heading text-3xl font-bold transition-all duration-300 ${
+                      servicesActive
+                        ? "text-[var(--satt-gold-dark)]"
+                        : "text-[var(--satt-text-primary)] hover:text-[var(--satt-gold-dark)]"
+                    }`}
                   >
-                    Services
+                    <span className="relative z-10">
+                      Services
+                    </span>
+
+                    {/* UNDERLINE */}
+
+                    <span
+                      className={`absolute -bottom-1 left-0 h-px bg-[var(--satt-gold)] transition-all duration-500 ${
+                        servicesActive
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    />
+
+                    {/* DIAMOND */}
+
+                    <span
+                      className={`absolute -bottom-[4px] left-1/2 h-1.5 w-1.5 -translate-x-1/2 rotate-45 bg-[var(--satt-gold)] transition-all duration-300 ${
+                        servicesActive
+                          ? "scale-100 opacity-100"
+                          : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"
+                      }`}
+                    />
+
+                    {/* GLOW */}
+
+                    <span
+                      className={`pointer-events-none absolute -bottom-1 left-1/2 h-3 -translate-x-1/2 bg-[var(--satt-gold)]/20 blur-md transition-all duration-500 ${
+                        servicesActive
+                          ? "w-[85%] opacity-100"
+                          : "w-0 opacity-0"
+                      }`}
+                    />
                   </Link>
 
                   {/* DROPDOWN TOGGLE */}
 
                   <button
                     type="button"
-                    onClick={() => setServicesOpen(!servicesOpen)}
+                    onClick={() =>
+                      setServicesOpen(!servicesOpen)
+                    }
                     aria-label="Toggle services submenu"
                     aria-expanded={servicesOpen}
-                    className="flex h-10 w-10 items-center justify-center"
+                    className={`flex h-10 w-10 items-center justify-center transition-colors duration-300 ${
+                      servicesActive
+                        ? "text-[var(--satt-gold-dark)]"
+                        : "text-[var(--satt-text-primary)]"
+                    }`}
                   >
                     <ChevronDown
                       size={22}
                       strokeWidth={1.4}
-                      className={`text-[var(--satt-gold-dark)] transition-transform duration-300 ${
-                        servicesOpen ? "rotate-180" : ""
+                      className={`transition-transform duration-300 ${
+                        servicesOpen
+                          ? "rotate-180"
+                          : ""
                       }`}
                     />
                   </button>
 
                 </div>
 
-                {/* SERVICE SUBMENU */}
+                {/* =================================================
+                    SERVICE SUBMENU
+                ================================================= */}
 
                 <AnimatePresence initial={false}>
                   {servicesOpen && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      initial={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      exit={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                      }}
                       className="overflow-hidden"
                     >
-                      <div className="mb-4 border-l border-[var(--satt-gold)] pl-5">
+                      <div className="mb-4 border-l border-[var(--satt-gold)]/70 pl-5">
 
-                        {eventServices.map((service, index) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            onClick={onClose}
-                            className="group flex items-center justify-between py-3"
-                          >
-                            <div className="flex items-center gap-3">
+                        {eventServices.map(
+                          (service, index) => {
+                            const serviceActive =
+                              isActive(service.href);
 
-                              <span className="text-[8px] tracking-[0.15em] text-[var(--satt-gold-dark)]">
-                                {String(index + 1).padStart(2, "0")}
-                              </span>
+                            return (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                onClick={onClose}
+                                className={`group relative flex items-center justify-between py-3 transition-all duration-300 ${
+                                  serviceActive
+                                    ? "translate-x-0.5"
+                                    : ""
+                                }`}
+                              >
 
-                              <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--satt-text-primary)] transition-colors group-hover:text-[var(--satt-gold-dark)]">
-                                {service.label}
-                              </span>
+                                {/* ACTIVE LEFT LINE */}
 
-                            </div>
+                                <span
+                                  className={`absolute -left-[21px] top-0 h-full w-[2px] bg-[var(--satt-gold)] transition-all duration-300 ${
+                                    serviceActive
+                                      ? "opacity-100"
+                                      : "opacity-0 group-hover:opacity-100"
+                                  }`}
+                                />
 
-                            <ArrowUpRight
-                              size={13}
-                              strokeWidth={1.4}
-                              className="text-[var(--satt-gold-dark)] transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                            />
-                          </Link>
-                        ))}
+                                <div className="flex items-center gap-3">
+
+                                  {/* NUMBER */}
+
+                                  <span
+                                    className={`text-[8px] tracking-[0.15em] transition-colors duration-300 ${
+                                      serviceActive
+                                        ? "text-[var(--satt-gold-dark)]"
+                                        : "text-[var(--satt-gold)]"
+                                    }`}
+                                  >
+                                    {String(
+                                      index + 1
+                                    ).padStart(2, "0")}
+                                  </span>
+
+                                  {/* LABEL */}
+
+                                  <span
+                                    className={`text-[11px] font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
+                                      serviceActive
+                                        ? "translate-x-0.5 text-[var(--satt-gold-dark)]"
+                                        : "text-[var(--satt-text-primary)] group-hover:translate-x-0.5 group-hover:text-[var(--satt-gold-dark)]"
+                                    }`}
+                                  >
+                                    {service.label}
+                                  </span>
+
+                                </div>
+
+                                {/* ARROW */}
+
+                                <ArrowUpRight
+                                  size={13}
+                                  strokeWidth={1.4}
+                                  className={`transition-all duration-300 ${
+                                    serviceActive
+                                      ? "translate-x-0.5 -translate-y-0.5 text-[var(--satt-gold-dark)] opacity-100"
+                                      : "text-[var(--satt-gold)] opacity-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+                                  }`}
+                                />
+
+                              </Link>
+                            );
+                          }
+                        )}
 
                       </div>
                     </motion.div>
@@ -206,28 +377,70 @@ const MobileMenu = ({ open, onClose }) => {
               </motion.div>
 
               {/* =================================================
-                  REMAINING LINKS
+                  OUR BELIEVE
               ================================================= */}
 
-              {navigation.slice(2).map((item, index) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    delay: 0.18 + index * 0.06,
-                  }}
-                  className="border-b border-[var(--satt-border)]/20 py-4"
-                >
-                  <Link
-                    href={item.href}
-                    onClick={onClose}
-                    className="font-heading text-3xl font-bold transition-colors hover:text-[var(--satt-gold-dark)]"
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
+              <MobileNavItem
+                href="/beliefs"
+                label="Our Believe"
+                active={beliefsActive}
+                delay={0.18}
+              />
+
+              {/* =================================================
+                  EXPERIENCES
+              ================================================= */}
+
+              <MobileNavItem
+                href="/experiences"
+                label="Experiences"
+                active={experiencesActive}
+                delay={0.24}
+              />
+
+              {/* =================================================
+                  EVENT STORIES
+              ================================================= */}
+
+              <MobileNavItem
+                href="/events"
+                label="Event Stories"
+                active={eventsActive}
+                delay={0.30}
+              />
+
+              {/* =================================================
+                  OUR PARTNERS
+              ================================================= */}
+
+              <MobileNavItem
+                href="/partners"
+                label="Our Partners"
+                active={partnersActive}
+                delay={0.36}
+              />
+
+              {/* =================================================
+                  GALLERY
+              ================================================= */}
+
+              <MobileNavItem
+                href="/gallery"
+                label="Gallery"
+                active={galleryActive}
+                delay={0.42}
+              />
+
+              {/* =================================================
+                  CONTACT
+              ================================================= */}
+
+              <MobileNavItem
+                href="/contact"
+                label="Contact"
+                active={contactActive}
+                delay={0.48}
+              />
 
             </nav>
 
@@ -240,9 +453,20 @@ const MobileMenu = ({ open, onClose }) => {
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="block border border-[var(--satt-gold)] bg-[var(--satt-gold)] px-6 py-4 text-center text-sm uppercase tracking-[0.18em] transition-colors duration-300 hover:bg-[var(--satt-gold-dark)]"
+                className="
+                  group relative block overflow-hidden
+                  border border-[var(--satt-gold)]
+                  bg-[var(--satt-gold)]
+                  px-6 py-4
+                  text-center text-sm uppercase tracking-[0.18em]
+                  transition-all duration-300
+                  hover:bg-[var(--satt-gold-dark)]
+                  hover:text-white
+                "
               >
-                Plan Your Event
+                <span className="relative z-10">
+                  Plan Your Event
+                </span>
               </Link>
 
             </div>
@@ -255,3 +479,4 @@ const MobileMenu = ({ open, onClose }) => {
 };
 
 export default MobileMenu;
+
