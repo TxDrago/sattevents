@@ -10,8 +10,10 @@ import {
   Star,
 } from "lucide-react";
 
-import GalleryVideoShowcase from "@/sections/Gallery/GalleryVideoShowcase";
-import GalleryImageCarousel from "@/sections/Gallery/GalleryImageCarousel";
+
+import GalleryVideoShowcase from "@/sections/gallery/GalleryVideoShowcase";
+
+import GalleryImageCarousel from "@/sections/gallery/GalleryImageCarousel";
 
 const PartnerDetailShowcase = ({ partner }) => {
   const [activeReview, setActiveReview] = useState(0);
