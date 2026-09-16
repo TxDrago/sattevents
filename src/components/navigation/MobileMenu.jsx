@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronDown, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import Image from "next/image";
 import { eventServices } from "@/data/services";
 
 const MobileMenu = ({ open, onClose }) => {
@@ -129,13 +129,24 @@ const MobileMenu = ({ open, onClose }) => {
 
               {/* LOGO */}
 
-              <Link
-                href="/"
-                onClick={onClose}
-                className="group font-heading text-xl tracking-wide transition-colors duration-300 hover:text-[var(--satt-gold-dark)]"
-              >
-                SATT
-              </Link>
+             <Link href="/" className="group flex shrink-0 items-center">
+            <Image
+              src="/images/Satt_Icon.png"
+              alt="Satt Event Planners"
+              width={70}
+              height={70}
+              priority
+              className="
+                          h-[70px]
+                          w-[70px]
+                          object-contain
+                          transition-transform
+                          duration-300
+                          group-hover:scale-[1.02]
+                          xl:w-[175px]
+                        "
+            />
+          </Link>
 
               {/* CLOSE */}
 

@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useState } from "react";
 import { Menu, ChevronDown, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import Image from "next/image";
 import TopBar from "./TopBar";
 import MobileMenu from "./MobileMenu";
 import { eventServices } from "@/data/services";
@@ -26,9 +25,7 @@ const NavItem = ({ href, label, active }) => {
     >
       {/* LABEL */}
 
-      <span className="relative z-10">
-        {label}
-      </span>
+      <span className="relative z-10">{label}</span>
 
       {/* =====================================================
           GOLD UNDERLINE
@@ -118,33 +115,26 @@ const Navbar = () => {
           "
         >
           {/* =================================================
-              LOGO
-          ================================================= */}
+    LOGO
+================================================= */}
 
-          <Link
-            href="/"
-            className="group flex shrink-0 flex-col leading-none"
-          >
-            <span
+          <Link href="/" className="group flex shrink-0 items-center">
+            <Image
+              src="/images/Satt_Icon.png"
+              alt="Satt Event Planners"
+              width={70}
+              height={70}
+              priority
               className="
-                font-heading text-2xl tracking-[0.08em]
-                transition-colors duration-300
-                group-hover:text-[var(--satt-gold-dark)]
-                xl:text-3xl
-              "
-            >
-              SATT
-            </span>
-
-            <span
-              className="
-                mt-1 text-[8px] uppercase tracking-[0.35em]
-                text-[var(--satt-text-secondary)]
-                xl:text-[9px]
-              "
-            >
-              Event Planners
-            </span>
+                          h-[70px]
+                          w-[70px]
+                          object-contain
+                          transition-transform
+                          duration-300
+                          group-hover:scale-[1.02]
+                          xl:w-[175px]
+                        "
+            />
           </Link>
 
           {/* =================================================
@@ -155,16 +145,11 @@ const Navbar = () => {
           ================================================= */}
 
           <nav className="hidden min-[1100px]:flex items-center gap-5 xl:gap-8 2xl:gap-10">
-
             {/* =================================================
                 ABOUT
             ================================================= */}
 
-            <NavItem
-              href="/about"
-              label="About"
-              active={aboutActive}
-            />
+            <NavItem href="/about" label="About" active={aboutActive} />
 
             {/* =================================================
                 SERVICES DROPDOWN
@@ -187,9 +172,7 @@ const Navbar = () => {
               >
                 {/* LABEL */}
 
-                <span className="relative z-10">
-                  Services
-                </span>
+                <span className="relative z-10">Services</span>
 
                 {/* CHEVRON */}
 
@@ -225,9 +208,7 @@ const Navbar = () => {
 
                 <span
                   className={`pointer-events-none absolute -bottom-2 left-1/2 h-2 -translate-x-1/2 bg-[var(--satt-gold)]/20 blur-md transition-all duration-500 ${
-                    servicesActive
-                      ? "w-[85%] opacity-100"
-                      : "w-0 opacity-0"
+                    servicesActive ? "w-[85%] opacity-100" : "w-0 opacity-0"
                   }`}
                 />
               </Link>
@@ -244,7 +225,6 @@ const Navbar = () => {
                 }`}
               >
                 <div className="relative border border-[var(--satt-border)]/40 bg-[var(--satt-bg-secondary)] p-3 shadow-[0_15px_50px_rgba(0,0,0,0.08)]">
-
                   {/* GOLD TOP LINE */}
 
                   <div className="absolute left-5 right-5 top-0 h-px bg-[var(--satt-gold)]" />
@@ -285,7 +265,6 @@ const Navbar = () => {
                           />
 
                           <div className="flex items-center gap-3">
-
                             {/* NUMBER */}
 
                             <span
@@ -374,21 +353,13 @@ const Navbar = () => {
                 GALLERY
             ================================================= */}
 
-            <NavItem
-              href="/gallery"
-              label="Gallery"
-              active={galleryActive}
-            />
+            <NavItem href="/gallery" label="Gallery" active={galleryActive} />
 
             {/* =================================================
                 CONTACT
             ================================================= */}
 
-            <NavItem
-              href="/contact"
-              label="Contact"
-              active={contactActive}
-            />
+            <NavItem href="/contact" label="Contact" active={contactActive} />
           </nav>
 
           {/* =====================================================
@@ -411,9 +382,7 @@ const Navbar = () => {
                 xl:px-6 xl:text-[11px] xl:tracking-[0.16em]
               "
             >
-              <span className="relative z-10">
-                Plan Your Event
-              </span>
+              <span className="relative z-10">Plan Your Event</span>
             </Link>
           </div>
 
@@ -442,13 +411,9 @@ const Navbar = () => {
           MOBILE MENU
       ===================================================== */}
 
-      <MobileMenu
-        open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-      />
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 };
 
 export default Navbar;
-

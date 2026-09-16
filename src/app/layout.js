@@ -29,8 +29,15 @@ const delius = Delius({
 
 export const metadata = {
   title: "Satt Event Planners",
+
   description:
     "Satt Event Planners — Creating memorable experiences through thoughtful planning, creativity and flawless execution.",
+
+  icons: {
+    icon: "/images/Satt_Icon.png",
+    shortcut: "/images/Satt_Icon.png",
+    apple: "/images/Satt_Icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
