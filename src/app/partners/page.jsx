@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 
-import PartnerCard from "@/components/partners/PartnerCard";
+import PartnerCard from "@/sections/partners/PartnerCard";
 
 import { partners, partnerCategories } from "@/data/partners";
 

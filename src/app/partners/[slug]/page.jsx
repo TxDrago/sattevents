@@ -10,7 +10,7 @@ import {
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 
-import PartnerDetailShowcase from "@/components/partners/PartnerDetailShowcase";
+import PartnerDetailShowcase from "@/sections/partners/PartnerDetailShowcase";
 
 import {
   partners,
@@ -296,7 +296,7 @@ const PartnerDetailPage = async ({ params }) => {
 
             <p
               className="
-                text-[10px]
+                text-[24px]
                 font-bold
                 uppercase
                 tracking-[0.28em]

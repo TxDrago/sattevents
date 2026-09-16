@@ -76,6 +76,21 @@ export const partners = [
     about:
       "Frame Story Studios creates timeless visual stories through a blend of candid photography, cinematic portraits and documentary-style event coverage.",
 
+    planning: [
+      "Understand the couple's story, personalities and the atmosphere they want to create.",
+      "Build a photography timeline around ceremonies, portraits and important family moments.",
+      "Scout locations and identify opportunities for natural light and cinematic compositions.",
+      "Balance candid storytelling with guided portraits without interrupting the celebration.",
+      "Curate and refine the final collection into a cohesive visual story.",
+    ],
+
+    focus: [
+      "Authentic emotions",
+      "Cinematic storytelling",
+      "Natural moments",
+      "Editorial composition",
+    ],
+
     gallery: [
       "/images/partners/photographers/frame-story-studios/01.webp",
       "/images/partners/photographers/frame-story-studios/02.webp",
@@ -105,11 +120,15 @@ export const partners = [
     reviews: [
       {
         name: "Aarav & Meera",
+        image:
+          "/images/partners/photographers/frame-story-studios/01.webp",
         text:
           "They captured every emotion beautifully and made the entire experience feel effortless.",
       },
       {
         name: "Rohan Sharma",
+        image:
+          "/images/partners/photographers/frame-story-studios/02.webp",
         text:
           "The photographs felt natural, elegant and completely true to the event.",
       },
@@ -137,6 +156,21 @@ export const partners = [
     about:
       "Lumen Lens combines contemporary photography with cinematic filmmaking to create refined visual narratives for memorable occasions.",
 
+    planning: [
+      "Understand the event concept, visual direction and the moments that matter most.",
+      "Create a shot plan covering people, atmosphere, details and key event highlights.",
+      "Coordinate photography and filmmaking requirements around the event schedule.",
+      "Capture contemporary portraits, candid interactions and cinematic sequences.",
+      "Edit the final photographs and films into a polished visual narrative.",
+    ],
+
+    focus: [
+      "Contemporary imagery",
+      "Cinematic films",
+      "Visual consistency",
+      "Story-driven coverage",
+    ],
+
     gallery: [
       "/images/partners/photographers/lumen-lens/01.webp",
       "/images/partners/photographers/lumen-lens/02.webp",
@@ -158,6 +192,8 @@ export const partners = [
     reviews: [
       {
         name: "Karan Mehta",
+        image:
+          "/images/partners/photographers/lumen-lens/01.webp",
         text:
           "Professional from beginning to end. The final photographs were exceptional.",
       },
@@ -189,6 +225,21 @@ export const partners = [
     about:
       "The Event Canvas develops distinctive event concepts and manages the planning, coordination and production required to bring them to life.",
 
+    planning: [
+      "Understand the client's vision, event objectives and overall guest experience.",
+      "Develop the event concept, timeline, budget direction and execution roadmap.",
+      "Coordinate venues, vendors, production, entertainment and hospitality requirements.",
+      "Manage on-ground teams and respond to changing requirements during the event.",
+      "Conduct a detailed review before and after the event to ensure every element is delivered.",
+    ],
+
+    focus: [
+      "Creative direction",
+      "Seamless execution",
+      "Guest experience",
+      "Attention to detail",
+    ],
+
     gallery: [
       "/images/partners/event-planners/the-event-canvas/01.webp",
       "/images/partners/event-planners/the-event-canvas/02.webp",
@@ -210,6 +261,8 @@ export const partners = [
     reviews: [
       {
         name: "Priya & Aditya",
+        image:
+          "/images/partners/event-planners/the-event-canvas/01.webp",
         text:
           "Every detail was handled beautifully. We could actually enjoy our celebration without worrying about logistics.",
       },
@@ -237,6 +290,21 @@ export const partners = [
     about:
       "Moment Makers specialises in creating warm, immersive celebrations where thoughtful planning and flawless execution come together.",
 
+    planning: [
+      "Begin with the client's expectations, guest profile and purpose of the celebration.",
+      "Develop a practical event plan that balances creativity with smooth execution.",
+      "Coordinate suppliers, schedules and venue requirements well ahead of the event.",
+      "Manage guest movement, programme flow and on-ground coordination.",
+      "Review the experience from the guest's perspective and refine every important detail.",
+    ],
+
+    focus: [
+      "Warm experiences",
+      "Guest comfort",
+      "Smooth coordination",
+      "Memorable moments",
+    ],
+
     gallery: [
       "/images/partners/event-planners/moment-makers/01.webp",
       "/images/partners/event-planners/moment-makers/02.webp",
@@ -258,6 +326,8 @@ export const partners = [
     reviews: [
       {
         name: "Neha Kapoor",
+        image:
+          "/images/partners/event-planners/moment-makers/01.webp",
         text:
           "The team understood exactly what we wanted and executed everything beautifully.",
       },
@@ -289,6 +359,21 @@ export const partners = [
     about:
       "Royal Table Catering creates elevated dining experiences with carefully curated menus, elegant presentation and professional service.",
 
+    planning: [
+      "Understand the event format, guest profile, cuisine preferences and service expectations.",
+      "Curate a menu that complements the occasion while offering variety and balance.",
+      "Plan kitchen operations, staffing, preparation timelines and service requirements.",
+      "Coordinate presentation, live counters and food service with the event schedule.",
+      "Monitor quality, presentation and guest service throughout the celebration.",
+    ],
+
+    focus: [
+      "Culinary quality",
+      "Elegant presentation",
+      "Service excellence",
+      "Menu curation",
+    ],
+
     gallery: [
       "/images/partners/caterers/royal-table-catering/01.webp",
       "/images/partners/caterers/royal-table-catering/02.webp",
@@ -310,6 +395,8 @@ export const partners = [
     reviews: [
       {
         name: "Ananya Events",
+        image:
+          "/images/partners/caterers/royal-table-catering/01.webp",
         text:
           "The food presentation and service were both outstanding.",
       },
@@ -337,6 +424,21 @@ export const partners = [
     about:
       "Saffron Feast brings together traditional Indian flavours, contemporary presentation and attentive hospitality for special occasions.",
 
+    planning: [
+      "Understand the cultural character of the celebration and the preferences of the guests.",
+      "Build menus around Indian flavours, regional specialties and the event format.",
+      "Plan preparation, live counters and service operations according to guest flow.",
+      "Coordinate food presentation and service timing with the wider event team.",
+      "Maintain flavour, freshness and hospitality standards throughout the event.",
+    ],
+
+    focus: [
+      "Indian flavours",
+      "Traditional cuisine",
+      "Live experiences",
+      "Warm hospitality",
+    ],
+
     gallery: [
       "/images/partners/caterers/saffron-feast/01.webp",
       "/images/partners/caterers/saffron-feast/02.webp",
@@ -358,6 +460,8 @@ export const partners = [
     reviews: [
       {
         name: "Vikram Joshi",
+        image:
+          "/images/partners/caterers/saffron-feast/01.webp",
         text:
           "Our guests loved the food. Everything from the menu to the service was excellent.",
       },
@@ -389,6 +493,21 @@ export const partners = [
     about:
       "Atelier Decor creates atmospheric environments where architecture, floral design, lighting and styling work together as one visual experience.",
 
+    planning: [
+      "Study the venue architecture, event theme and desired emotional atmosphere.",
+      "Develop a complete visual direction covering florals, furniture, lighting and styling.",
+      "Translate the concept into production plans, layouts and installation requirements.",
+      "Build and refine the environment on-site while coordinating multiple visual elements.",
+      "Complete a final styling inspection to ensure every detail works as one composition.",
+    ],
+
+    focus: [
+      "Spatial design",
+      "Floral artistry",
+      "Atmospheric lighting",
+      "Luxury detailing",
+    ],
+
     gallery: [
       "/images/partners/decor-styling/atelier-decor/01.webp",
       "/images/partners/decor-styling/atelier-decor/02.webp",
@@ -418,6 +537,8 @@ export const partners = [
     reviews: [
       {
         name: "Meera Weddings",
+        image:
+          "/images/partners/decor-styling/atelier-decor/01.webp",
         text:
           "The venue looked completely transformed. The attention to detail was incredible.",
       },
@@ -445,6 +566,21 @@ export const partners = [
     about:
       "Golden Bloom Designs specialises in sophisticated styling concepts that bring warmth, character and visual depth to every celebration.",
 
+    planning: [
+      "Understand the client's aesthetic, celebration style and desired visual mood.",
+      "Develop floral and styling concepts suited to the venue and scale of the event.",
+      "Select flowers, textures, colours and decorative elements to create visual harmony.",
+      "Install each element carefully while adapting the styling to the actual space.",
+      "Refine the final setting before guests arrive and photograph the finished experience.",
+    ],
+
+    focus: [
+      "Floral styling",
+      "Intimate settings",
+      "Visual harmony",
+      "Bespoke details",
+    ],
+
     gallery: [
       "/images/partners/decor-styling/golden-bloom-designs/01.webp",
       "/images/partners/decor-styling/golden-bloom-designs/02.webp",
@@ -466,6 +602,8 @@ export const partners = [
     reviews: [
       {
         name: "Riya Malhotra",
+        image:
+          "/images/partners/decor-styling/golden-bloom-designs/01.webp",
         text:
           "The decor was elegant, tasteful and exactly what we had imagined.",
       },
@@ -497,6 +635,21 @@ export const partners = [
     about:
       "Rhythm House curates live entertainment experiences designed around the mood, audience and character of every event.",
 
+    planning: [
+      "Understand the event audience, atmosphere and type of energy the celebration requires.",
+      "Curate musicians, singers and performance formats suited to the occasion.",
+      "Prepare setlists, performance schedules and technical requirements in advance.",
+      "Coordinate sound checks, stage movement and transitions with the event production team.",
+      "Read the audience during the performance and adapt the energy naturally.",
+    ],
+
+    focus: [
+      "Live energy",
+      "Musical quality",
+      "Audience engagement",
+      "Performance atmosphere",
+    ],
+
     gallery: [
       "/images/partners/entertainment-artists/rhythm-house/01.webp",
       "/images/partners/entertainment-artists/rhythm-house/02.webp",
@@ -526,6 +679,8 @@ export const partners = [
     reviews: [
       {
         name: "Arjun Verma",
+        image:
+          "/images/partners/entertainment-artists/rhythm-house/01.webp",
         text:
           "The band completely changed the energy of the evening. Fantastic performance.",
       },
@@ -553,6 +708,21 @@ export const partners = [
     about:
       "Stage & Soul brings together a diverse range of performers and artists for culturally rich and energetic event experiences.",
 
+    planning: [
+      "Understand the cultural character, audience profile and purpose of the event.",
+      "Curate performers and artistic acts that complement the celebration.",
+      "Plan performance sequences, artist requirements and stage arrangements.",
+      "Coordinate rehearsals, transitions and technical elements with the production team.",
+      "Deliver performances that feel natural to the event while keeping the audience engaged.",
+    ],
+
+    focus: [
+      "Cultural expression",
+      "Artist curation",
+      "Stage presence",
+      "Audience engagement",
+    ],
+
     gallery: [
       "/images/partners/entertainment-artists/stage-and-soul/01.webp",
       "/images/partners/entertainment-artists/stage-and-soul/02.webp",
@@ -574,6 +744,8 @@ export const partners = [
     reviews: [
       {
         name: "Satt Events Client",
+        image:
+          "/images/partners/entertainment-artists/stage-and-soul/01.webp",
         text:
           "The performers were talented, energetic and perfectly suited to the occasion.",
       },
@@ -605,6 +777,21 @@ export const partners = [
     about:
       "The Heritage Courtyard combines traditional character with modern hospitality to create memorable event settings.",
 
+    planning: [
+      "Understand the event format, guest count and atmosphere the client wants to create.",
+      "Recommend suitable spaces and hospitality arrangements within the property.",
+      "Plan guest movement, seating, service areas and event-day requirements.",
+      "Coordinate hospitality teams with the event schedule and production requirements.",
+      "Prepare the venue carefully so guests experience a welcoming and effortless celebration.",
+    ],
+
+    focus: [
+      "Heritage character",
+      "Guest comfort",
+      "Hospitality",
+      "Venue atmosphere",
+    ],
+
     gallery: [
       "/images/partners/venues-hospitality/the-heritage-courtyard/01.webp",
       "/images/partners/venues-hospitality/the-heritage-courtyard/02.webp",
@@ -626,6 +813,8 @@ export const partners = [
     reviews: [
       {
         name: "Aditya Singh",
+        image:
+          "/images/partners/venues-hospitality/the-heritage-courtyard/01.webp",
         text:
           "Beautiful venue, excellent hospitality and a wonderful atmosphere.",
       },
@@ -653,6 +842,21 @@ export const partners = [
     about:
       "Lakeview Grand offers versatile spaces and hospitality services for weddings, conferences and destination celebrations.",
 
+    planning: [
+      "Understand the event purpose, guest profile and preferred use of the venue.",
+      "Plan the most suitable spaces for ceremonies, dining, meetings and celebrations.",
+      "Coordinate venue layouts, guest movement and hospitality requirements.",
+      "Align the venue team with the event timeline and production schedule.",
+      "Monitor the guest experience throughout the event and respond to requirements quickly.",
+    ],
+
+    focus: [
+      "Scenic setting",
+      "Flexible spaces",
+      "Guest hospitality",
+      "Event comfort",
+    ],
+
     gallery: [
       "/images/partners/venues-hospitality/lakeview-grand/01.webp",
       "/images/partners/venues-hospitality/lakeview-grand/02.webp",
@@ -674,6 +878,8 @@ export const partners = [
     reviews: [
       {
         name: "Corporate Client",
+        image:
+          "/images/partners/venues-hospitality/lakeview-grand/01.webp",
         text:
           "The location and hospitality made our event extremely comfortable for every guest.",
       },
@@ -705,6 +911,21 @@ export const partners = [
     about:
       "Route One Travels coordinates transportation and guest movement with a focus on comfort, reliability and seamless event logistics.",
 
+    planning: [
+      "Understand guest numbers, routes, arrival points and the complete transportation schedule.",
+      "Create detailed transfer plans around ceremonies, programmes and event timings.",
+      "Assign appropriate vehicles and drivers according to guest requirements.",
+      "Coordinate arrivals, departures, route updates and last-minute transportation changes.",
+      "Monitor guest movement throughout the event to keep transfers smooth and punctual.",
+    ],
+
+    focus: [
+      "Reliable transfers",
+      "Route coordination",
+      "Punctuality",
+      "Guest comfort",
+    ],
+
     gallery: [
       "/images/partners/travel-transportation/route-one-travels/01.webp",
       "/images/partners/travel-transportation/route-one-travels/02.webp",
@@ -726,6 +947,8 @@ export const partners = [
     reviews: [
       {
         name: "Event Coordinator",
+        image:
+          "/images/partners/travel-transportation/route-one-travels/01.webp",
         text:
           "Every vehicle arrived on time and the guest transportation was handled smoothly.",
       },
@@ -753,6 +976,21 @@ export const partners = [
     about:
       "Elite Mobility provides premium transportation experiences for weddings, corporate events and VIP guests.",
 
+    planning: [
+      "Understand the mobility requirements of VIPs, families, executives and special guests.",
+      "Select suitable premium vehicles based on guest profile and occasion.",
+      "Plan chauffeur assignments, pickup schedules and coordinated movements.",
+      "Maintain continuous communication with the event team during guest transfers.",
+      "Ensure every journey reflects the comfort, privacy and service expected from a premium experience.",
+    ],
+
+    focus: [
+      "Luxury mobility",
+      "VIP service",
+      "Professional chauffeurs",
+      "Privacy & comfort",
+    ],
+
     gallery: [
       "/images/partners/travel-transportation/elite-mobility/01.webp",
       "/images/partners/travel-transportation/elite-mobility/02.webp",
@@ -774,6 +1012,8 @@ export const partners = [
     reviews: [
       {
         name: "Private Client",
+        image:
+          "/images/partners/travel-transportation/elite-mobility/01.webp",
         text:
           "Excellent vehicles, professional chauffeurs and completely hassle-free service.",
       },
@@ -805,6 +1045,21 @@ export const partners = [
     about:
       "Blush & Brush creates personalised beauty looks that complement the personality, outfit and atmosphere of every celebration.",
 
+    planning: [
+      "Understand the client's personality, outfit, features and overall celebration style.",
+      "Discuss the desired look and create a personalised makeup and beauty direction.",
+      "Plan makeup, hair styling and preparation time around the event schedule.",
+      "Choose products, techniques and finishes that work naturally with event lighting and photography.",
+      "Complete a final beauty check so every detail remains polished throughout the celebration.",
+    ],
+
+    focus: [
+      "Personalised beauty",
+      "Natural elegance",
+      "Camera-ready finish",
+      "Long-lasting results",
+    ],
+
     gallery: [
       "/images/partners/makeup-beauty/blush-and-brush/01.webp",
       "/images/partners/makeup-beauty/blush-and-brush/02.webp",
@@ -826,6 +1081,8 @@ export const partners = [
     reviews: [
       {
         name: "Ishita Sharma",
+        image:
+          "/images/partners/makeup-beauty/blush-and-brush/01.webp",
         text:
           "My makeup looked elegant and natural and lasted beautifully throughout the celebration.",
       },
@@ -853,6 +1110,21 @@ export const partners = [
     about:
       "The Beauty Studio offers contemporary beauty styling with personalised consultation and attention to detail.",
 
+    planning: [
+      "Begin with a consultation to understand the client's preferred style and occasion.",
+      "Create a beauty direction suited to the outfit, venue, lighting and overall event aesthetic.",
+      "Plan makeup, hair and preparation requirements around the client's schedule.",
+      "Refine the look through careful attention to complexion, styling and finishing details.",
+      "Complete a final check to ensure the finished look feels comfortable and confident.",
+    ],
+
+    focus: [
+      "Contemporary styling",
+      "Personal consultation",
+      "Editorial finish",
+      "Attention to detail",
+    ],
+
     gallery: [
       "/images/partners/makeup-beauty/the-beauty-studio/01.webp",
       "/images/partners/makeup-beauty/the-beauty-studio/02.webp",
@@ -874,6 +1146,8 @@ export const partners = [
     reviews: [
       {
         name: "Sakshi Jain",
+        image:
+          "/images/partners/makeup-beauty/the-beauty-studio/01.webp",
         text:
           "The entire experience was relaxing and the final look was exactly what I wanted.",
       },
